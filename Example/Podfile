@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'MyTestRouter_Example' do
+  pod 'MyTestRouter', :path => '../'
+
+  target 'MyTestRouter_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
