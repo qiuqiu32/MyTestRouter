@@ -118,6 +118,9 @@ static MTRouter *mtRouter;
                 int val = [valObj intValue];
                 [invocation setArgument:&val atIndex:i];
             }
+            case '#':{
+                [invocation setArgument:&valObj atIndex:i];
+            }
             break;
            
                 
