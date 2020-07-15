@@ -100,7 +100,7 @@ static MTRouter *mtRouter;
         }
     }
     
-    Method method = class_getClassMethod([target class], action);
+    Method method = class_getInstanceMethod([target class], action);
     int argumentCount = method_getNumberOfArguments(method);
     if (argumentCount > (arguments.count + 2)) return nil;
     
@@ -118,9 +118,16 @@ static MTRouter *mtRouter;
                 int val = [valObj intValue];
                 [invocation setArgument:&val atIndex:i];
             }
+                break;
             case '#':{
                 [invocation setArgument:&valObj atIndex:i];
             }
+                break;
+            default:{
+                [invocation setArgument:&valObj atIndex:i];
+                
+            }
+                break;
             break;
            
                 
